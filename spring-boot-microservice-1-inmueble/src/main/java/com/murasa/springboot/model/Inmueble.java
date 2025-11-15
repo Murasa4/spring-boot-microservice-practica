@@ -1,0 +1,33 @@
+package com.murasa.springboot.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+
+@Data
+@Entity
+@Table(name="inmueble")
+public class Inmueble {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name="nombre", length = 150, nullable = false)
+    private String nombre;
+
+    @Column(name = "direccion", length = 500, nullable = false)
+    private String direccion;
+
+    @Column(name = "foto", length = 1200, nullable = true)
+    private String foto;
+
+    @Column(name = "precio", nullable = false)
+    private double precio;
+
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDateTime fechaCreacion;
+
+}
